@@ -1,0 +1,51 @@
+[
+  {
+    "Question": "What is Android ?",
+    "Answer": "Android is Operating System"
+  },
+    {
+    "Question":"Describe three common use cases for using an Intent.",
+    "Answer": ["• You can start a new instance of an Activity by passing an Intent to startActivity() method.",
+  "•You can start a service to perform a one-time operation (such as download a file) by passing an Intent to startService().",
+  "•You can deliver a broadcast to other apps by passing an Intent to sendBroadcast(), sendOrderedBroadcast(), or sendStickyBroadcast()."]
+},
+  {
+    "Question": "Which activity life cycle method gets called whenever you open an app for the first time?",
+    "Answer": "Following methods are getting called:onCreate(),onStart(),onResume()."
+  },
+  {
+    "Question": "Which activity life cycle method gets called whenever a dialog opens on screen?",
+    "Answer": "onPause() gets called whenever a dialog appears on screen. Also onResume() gets called when you dismiss the dialog or press back button while dialog is on the foreground."
+  },{
+  "Question": "What happens to the activity life cycle whenever a user is browsing your application and suddenly a call comes?",
+  "Answer": ["Your activity goes to the background state and another activity corresponding to the phone call comes in the foreground.",
+  "onPause() method followed by onStop() method gets called whenever a call arrives on the device."]
+},{
+  "Question": "What happens to the AsyncTask when the Activity that's executes it, changes the orientation?",
+  "Answer": "The lifecycle of an AsyncTask is not tied onto the Activity since it's occurring on a background thread. Hence an orientation change won't stop the AsyncTask. But if the AsyncTask tries to update the UI thread after the orientation is changed, it would give rise to java.lang.IllegalArgumentException: View not attached to window manager since it will try to update the former instances of the activity that got reset."
+},{
+  "Question": "What happens when you don’t call super.onCreate() method in onCreate()?",
+  "Answer": "Android framework will throw an exception by the name of SuperNotCalledException. Your implemented activity will not work without calling this method. super.onCreate() is required to perform the necessary initial set up, assignment of context to an activity, etc."
+},{
+  "Question": "How to remove lines between ListViews on Android?",
+  "Answer": ["In XML:",
+  "android:divider='@null'",
+ " Or in Java:",
+  "listView.setDivider(null);"]
+},{
+  "Question": "What’s the difference between FLAG_ACTIVITY_CLEAR_TASK and FLAG_ACTIVITY_CLEAR_TOP?",
+  "Answer": ["FLAG_ACTIVITY_CLEAR_TASK is used to clear all the activities from the task including any existing instances of the class invoked. The Activity launched by intent becomes the new root of the otherwise empty task list. This flag has to be used in conjunction with FLAG_ ACTIVITY_NEW_TASK.",
+  "FLAG_ACTIVITY_CLEAR_TOP on the other hand, if set and if an old instance of this Activity exists in the task list then barring that all the other activities are removed and that old activity becomes the root of the task list. Else if there’s no instance of that activity then a new instance of it is made the root of the task list. Using FLAG_ACTIVITY_NEW_TASK in conjunction is a good practice, though not necessary."]
+
+},{
+  "Question": "How do you disable onBackPressed()?",
+  "Answer": ["The onBackPressed() method is defined as shown below:",
+  "@Override",
+  "public void onBackPressed() {",
+  "super.onBackPressed();}",
+  "To disable the back button and preventing it from destroying the current activity and going back we have to remove the line super.onBackPressed()"]
+},{
+  "Question": "What is Intent ?",
+  "Answer": "Intent is Message Passing Framework"
+}
+]
